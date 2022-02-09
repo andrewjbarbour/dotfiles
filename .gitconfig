@@ -1,0 +1,5 @@
+[user]
+	email = barbouraj@gmail.com
+	name = Andrew Barbour
+[credential]
+	helper = osxkeychain
