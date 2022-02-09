@@ -1,5 +1,4 @@
 #!/bin/sh
-
 echo "Welcome, Andrew! 🔥"
 
 export term=xterm-256color
