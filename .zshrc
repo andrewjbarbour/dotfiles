@@ -4,12 +4,14 @@ echo "Welcome, Andrew! 🔥"
 export term=xterm-256color
 export CLICOLOR=1
 export LSCOLORS=Fafacxdxbxegedabagacad
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
 
 GREEN=$(tput setaf 2);
 YELLOW=$(tput setaf 3);
 RESET=$(tput sgr0);
 
-# shell aliases
+function c { code ${@:-.} }
 alias ll="ls -1a";
 alias pg="echo 'Pinging Google' && ping www.google.com";
 alias ..="cd ../";
@@ -55,7 +57,6 @@ alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yar
 alias check-nodemon="ps aux | rg -i '.bin/nodemon'";
 
 # shell functions
-function c { code ${@:-.} }
 mkcd() {mkdir -p "$@" && cd "$@" || exit; }
 cdl() { cd "$@" && ll; }
 npm-latest() { npm info "$1" | grep latest; }
